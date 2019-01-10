@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/home"
+        android:title="首页"
+        android:checkable="true"
+        android:enabled="true"
+        android:checked="true"
+        android:icon="@mipmap/ic_launcher"
+        app:showAsAction="ifRoom">
+    </item>
+    <item android:id="@+id/know"
+        android:title="知识体系"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        app:showAsAction="ifRoom">
+    </item>
+    <item android:id="@+id/gongzhonghao"
+        android:title="公众号"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        app:showAsAction="ifRoom">
+    </item>
+    <item android:id="@+id/navigation"
+        android:title="导航"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        app:showAsAction="ifRoom">
+    </item>
+</menu>
