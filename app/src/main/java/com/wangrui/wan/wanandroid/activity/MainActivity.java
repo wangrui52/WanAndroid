@@ -79,6 +79,8 @@ public class MainActivity extends Activity {
         banner.setDelayTime(1500);
         //设置指示器位置（当banner模式中有指示器时）
         banner.setIndicatorGravity(BannerConfig.CENTER);
+
+
     }
 
     private ArrayList<String> initList () {
