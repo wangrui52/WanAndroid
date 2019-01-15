@@ -16,12 +16,12 @@
         "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable-xhdpi-v4/abc_text_select_handle_right_mtrl_dark.png"
     },
     {
-        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/color_abc_btn_colored_borderless_text_material.xml.flat",
-        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/color/abc_btn_colored_borderless_text_material.xml"
-    },
-    {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/layout_notification_template_part_time.xml.flat",
         "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/9662e19ce03760b22812ddbc27ec3172/res/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/color_abc_btn_colored_borderless_text_material.xml.flat",
+        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/color/abc_btn_colored_borderless_text_material.xml"
     },
     {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/layout_design_text_input_password_icon.xml.flat",
@@ -144,12 +144,12 @@
         "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/color/abc_search_url_text.xml"
     },
     {
-        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_star_black_16dp.png.flat",
-        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable-xxhdpi-v4/abc_ic_star_black_16dp.png"
-    },
-    {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_star_black_16dp.png.flat",
+        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable-xxhdpi-v4/abc_ic_star_black_16dp.png"
     },
     {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_star_black_48dp.png.flat",
@@ -216,24 +216,24 @@
         "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable-xxxhdpi-v4/abc_ic_menu_share_mtrl_alpha.png"
     },
     {
-        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable_abc_ic_menu_overflow_material.xml.flat",
-        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable/abc_ic_menu_overflow_material.xml"
-    },
-    {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
         "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable-hdpi-v4/abc_scrubber_track_mtrl_alpha.9.png"
     },
     {
-        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/color_mtrl_btn_bg_color_selector.xml.flat",
-        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/6112415cee3d5947a575a8f5184dfed6/res/color/mtrl_btn_bg_color_selector.xml"
+        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable_abc_ic_menu_overflow_material.xml.flat",
+        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable/abc_ic_menu_overflow_material.xml"
+    },
+    {
+        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/color_abc_secondary_text_material_dark.xml.flat",
+        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/color/abc_secondary_text_material_dark.xml"
     },
     {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
         "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable-xhdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
-        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/color_abc_secondary_text_material_dark.xml.flat",
-        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/color/abc_secondary_text_material_dark.xml"
+        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/color_mtrl_btn_bg_color_selector.xml.flat",
+        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/6112415cee3d5947a575a8f5184dfed6/res/color/mtrl_btn_bg_color_selector.xml"
     },
     {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_normal.9.png.flat",
@@ -348,12 +348,12 @@
         "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable/abc_cab_background_internal_bg.xml"
     },
     {
-        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_design_ic_visibility_off.png.flat",
-        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/6112415cee3d5947a575a8f5184dfed6/res/drawable-xxxhdpi-v4/design_ic_visibility_off.png"
-    },
-    {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
         "source": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_design_ic_visibility_off.png.flat",
+        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/6112415cee3d5947a575a8f5184dfed6/res/drawable-xxxhdpi-v4/design_ic_visibility_off.png"
     },
     {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable_mtrl_tabs_default_indicator.xml.flat",
@@ -384,20 +384,20 @@
         "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/9662e19ce03760b22812ddbc27ec3172/res/layout-v16/notification_template_custom_big.xml"
     },
     {
-        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-v21_abc_edit_text_material.xml.flat",
-        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable-v21/abc_edit_text_material.xml"
-    },
-    {
-        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
-        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable-mdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
+        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/9662e19ce03760b22812ddbc27ec3172/res/drawable-hdpi-v4/notification_bg_low_normal.9.png"
     },
     {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
         "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable-xxhdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
     },
     {
-        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
-        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/9662e19ce03760b22812ddbc27ec3172/res/drawable-hdpi-v4/notification_bg_low_normal.9.png"
+        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
+        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable-mdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-v21_abc_edit_text_material.xml.flat",
+        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable-v21/abc_edit_text_material.xml"
     },
     {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
@@ -416,12 +416,12 @@
         "source": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_launcher_background.png"
     },
     {
-        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable_design_snackbar_background.xml.flat",
-        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/6112415cee3d5947a575a8f5184dfed6/res/drawable/design_snackbar_background.xml"
-    },
-    {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/color_mtrl_bottom_nav_colored_item_tint.xml.flat",
         "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/6112415cee3d5947a575a8f5184dfed6/res/color/mtrl_bottom_nav_colored_item_tint.xml"
+    },
+    {
+        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable_design_snackbar_background.xml.flat",
+        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/6112415cee3d5947a575a8f5184dfed6/res/drawable/design_snackbar_background.xml"
     },
     {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/layout_abc_list_menu_item_layout.xml.flat",
@@ -440,12 +440,12 @@
         "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable-xxhdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
-        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
-        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable-xhdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
-    },
-    {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/layout_abc_action_menu_item_layout.xml.flat",
         "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/layout/abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
+        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable-xhdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/anim_design_snackbar_in.xml.flat",
@@ -512,12 +512,12 @@
         "source": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable_abc_dialog_material_background.xml.flat",
-        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable/abc_dialog_material_background.xml"
-    },
-    {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_focused_holo.9.png.flat",
         "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable-hdpi-v4/abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable_abc_dialog_material_background.xml.flat",
+        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable/abc_dialog_material_background.xml"
     },
     {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
@@ -660,6 +660,10 @@
         "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/color-v21/abc_btn_colored_borderless_text_material.xml"
     },
     {
+        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/layout_banner.xml.flat",
+        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/banner-1.4.10.aar/304b23cf47d193900236b1747476552c/res/layout/banner.xml"
+    },
+    {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable-xhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
     },
@@ -792,6 +796,10 @@
         "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable-xhdpi-v4/abc_ic_star_half_black_16dp.png"
     },
     {
+        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable_black_background.xml.flat",
+        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/banner-1.4.10.aar/304b23cf47d193900236b1747476552c/res/drawable/black_background.xml"
+    },
+    {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/layout_notification_action_tombstone.xml.flat",
         "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/9662e19ce03760b22812ddbc27ec3172/res/layout/notification_action_tombstone.xml"
     },
@@ -874,6 +882,10 @@
     {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
         "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable-xxhdpi-v4/abc_text_select_handle_left_mtrl_dark.png"
+    },
+    {
+        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable_gray_radius.xml.flat",
+        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/banner-1.4.10.aar/304b23cf47d193900236b1747476552c/res/drawable/gray_radius.xml"
     },
     {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_star_half_black_36dp.png.flat",
@@ -1444,6 +1456,10 @@
         "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/9662e19ce03760b22812ddbc27ec3172/res/layout/notification_template_custom_big.xml"
     },
     {
+        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable_white_radius.xml.flat",
+        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/banner-1.4.10.aar/304b23cf47d193900236b1747476552c/res/drawable/white_radius.xml"
+    },
+    {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/interpolator-v21_mtrl_linear_out_slow_in.xml.flat",
         "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/6112415cee3d5947a575a8f5184dfed6/res/interpolator-v21/mtrl_linear_out_slow_in.xml"
     },
@@ -1484,12 +1500,12 @@
         "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable-xxhdpi-v4/abc_ic_star_black_48dp.png"
     },
     {
-        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
-        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable-hdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_design_ic_visibility_off.xml.flat",
         "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/6112415cee3d5947a575a8f5184dfed6/res/drawable-anydpi-v21/design_ic_visibility_off.xml"
+    },
+    {
+        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
+        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable-hdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_black_48dp.png.flat",
@@ -1736,6 +1752,10 @@
         "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable-ldrtl-xhdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
+        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable_no_banner.png.flat",
+        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/banner-1.4.10.aar/304b23cf47d193900236b1747476552c/res/drawable/no_banner.png"
+    },
+    {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
         "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable-hdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png"
     },
@@ -1764,12 +1784,12 @@
         "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable-mdpi-v4/abc_ic_star_black_16dp.png"
     },
     {
-        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/layout_abc_action_bar_up_container.xml.flat",
-        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/layout/abc_action_bar_up_container.xml"
-    },
-    {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
         "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable-xxxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/layout_abc_action_bar_up_container.xml.flat",
+        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/layout/abc_action_bar_up_container.xml"
     },
     {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/layout_abc_screen_toolbar.xml.flat",
@@ -1838,6 +1858,10 @@
     {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/1a1558bef51af86cfa43adfae2193329/res/drawable-xxhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/animator_scale_with_alpha.xml.flat",
+        "source": "/Users/wangrui/.gradle/caches/transforms-1/files-1.1/banner-1.4.10.aar/304b23cf47d193900236b1747476552c/res/animator/scale_with_alpha.xml"
     },
     {
         "merged": "/Users/wangrui/Documents/wrDemo/WanAndroid/app/build/intermediates/res/merged/debug/layout_abc_activity_chooser_view.xml.flat",
