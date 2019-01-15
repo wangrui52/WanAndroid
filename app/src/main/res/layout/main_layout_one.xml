@@ -29,11 +29,18 @@
             </android.support.v7.widget.Toolbar>
 
         </android.support.design.widget.AppBarLayout>
+        <com.youth.banner.Banner
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        </com.youth.banner.Banner>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="150dp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         </android.support.v7.widget.RecyclerView>
