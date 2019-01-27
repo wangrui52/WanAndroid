@@ -59,13 +59,15 @@ public class MainActivity extends Activity {
     }
 
     private void initView() {
+        banner = findViewById(R.id.banner);
         navigationView = (NavigationView) findViewById(R.id.menu_view);
         mRecycleView = findViewById(R.id.recycle);
         mRecycleView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         list = initList();
         myRecycleAdapter = new MyRecycleAdapter(list);
+
         mRecycleView.setAdapter(myRecycleAdapter);
-        banner = findViewById(R.id.banner);
+
     }
 
     private void initBanner() {
