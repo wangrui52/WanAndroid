@@ -13,6 +13,7 @@ public class Interface {
     //首页banner轮播图
     public static final String HOME_BANNER = "/banner/json";
 
-
+    //首页文章
+    public static final String HOME_ARTICLE = "/article/list/1/json";
 
 }

@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    android:id="@+id/coord_layout"
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coord_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
 
         <android.support.design.widget.AppBarLayout
             android:id="@+id/app_bar"
@@ -29,31 +35,33 @@
             </android.support.v7.widget.Toolbar>
 
         </android.support.design.widget.AppBarLayout>
-        <com.youth.banner.Banner
-            android:id="@+id/banner"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
-        </com.youth.banner.Banner>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycle"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="150dp"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:visibility="gone">
 
         </android.support.v7.widget.RecyclerView>
-        <android.support.design.widget.BottomNavigationView
-            android:id="@+id/Bottom_bar"
+        <FrameLayout
+            android:id="@+id/framePage"
             android:layout_width="match_parent"
-            android:layout_gravity="bottom"
-            android:background="@color/white"
-            android:layout_height="wrap_content"
-            app:itemTextColor="@color/colorAccent"
-            app:menu="@menu/bottom_bar_item">
+            android:layout_height="match_parent">
+        </FrameLayout>
 
-        </android.support.design.widget.BottomNavigationView>
+    </android.support.design.widget.CoordinatorLayout>
 
-</android.support.design.widget.CoordinatorLayout>
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/Bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        app:itemTextColor="@color/colorAccent"
+        app:menu="@menu/bottom_bar_item">
+    </android.support.design.widget.BottomNavigationView>
+</LinearLayout>
+
 
