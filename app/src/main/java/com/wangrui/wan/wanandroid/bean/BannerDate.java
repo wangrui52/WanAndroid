@@ -1,4 +1,4 @@
-package com.wangrui.wan.wanandroid;
+package com.wangrui.wan.wanandroid.bean;
 
 import java.util.List;
 

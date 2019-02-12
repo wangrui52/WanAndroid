@@ -8,17 +8,18 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.wangrui.wan.wanandroid.R;
+import com.wangrui.wan.wanandroid.bean.ArticleItemBean;
 
 import java.util.ArrayList;
 
 public class MyRecycleAdapter extends RecyclerView.Adapter<MyRecycleAdapter.ViewHolder> {
 
-    private ArrayList<String> list;
+    private ArrayList<ArticleItemBean> list;
 
     public static final int TYPE_HEADER = 0;
     public static final int TYPE_NORMAL = 1;
 
-    public MyRecycleAdapter(ArrayList<String> list) {
+    public MyRecycleAdapter(ArrayList<ArticleItemBean> list) {
         this.list = list;
     }
 
@@ -40,7 +41,7 @@ public class MyRecycleAdapter extends RecyclerView.Adapter<MyRecycleAdapter.View
         void onItemClick(int position, String data);
     }
 
-    public void addDatas(ArrayList<String> datas) {
+    public void addDatas(ArrayList<ArticleItemBean> datas) {
         list.addAll(datas);
         notifyDataSetChanged();
     }
@@ -62,8 +63,14 @@ public class MyRecycleAdapter extends RecyclerView.Adapter<MyRecycleAdapter.View
         if(getItemViewType(i) == TYPE_HEADER)
             return;
         final int pos = getRealPosition(viewHolder);
-        final String data = list.get(pos);
-        viewHolder.mTextView.setText("测试数据"+data);
+        final String title = list.get(pos).getTitle();
+        String chapter = list.get(pos).getChapter();
+        String author = list.get(pos).getAuthor();
+        String date = list.get(pos).getData();
+        viewHolder.title.setText(title);
+        viewHolder.chapter.setText(chapter);
+        viewHolder.author.setText(author);
+        viewHolder.date.setText(date);
     }
 
     public int getRealPosition(RecyclerView.ViewHolder holder) {
@@ -86,12 +93,15 @@ public class MyRecycleAdapter extends RecyclerView.Adapter<MyRecycleAdapter.View
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        TextView mTextView;
+        TextView title,date,author,chapter;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             if(itemView == mHeaderView)
                 return;
-            mTextView = itemView.findViewById(R.id.recycle_item);
+            title = itemView.findViewById(R.id.recycle_item);
+            date = itemView.findViewById(R.id.article_data);
+            author = itemView.findViewById(R.id.article_author);
+            chapter = itemView.findViewById(R.id.article_chapter);
         }
     }
 }
