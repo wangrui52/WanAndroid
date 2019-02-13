@@ -1,6 +1,7 @@
 package com.wangrui.wan.wanandroid.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -14,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.wangrui.wan.wanandroid.activity.ArticleDetailsActivity;
 import com.wangrui.wan.wanandroid.bean.ArticleItemBean;
 import com.wangrui.wan.wanandroid.bean.BannerDate;
 import com.wangrui.wan.wanandroid.GetRequest;
@@ -58,6 +60,15 @@ public class HomeFragment extends Fragment {
         setHeader(mRecycleView);
         mRecycleView.setAdapter(myRecycleAdapter);
         initBanner();
+        myRecycleAdapter.setOnItemClickListener(new MyRecycleAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position, String data,String title) {
+                Intent intent = new Intent(getActivity(),ArticleDetailsActivity.class);
+                intent.putExtra("link",data);
+                intent.putExtra("title",title);
+                startActivity(intent);
+            }
+        });
     }
 
     private ArrayList<ArticleItemBean> initList () {
@@ -133,6 +144,7 @@ public class HomeFragment extends Fragment {
                     itemBean.setData(beans.get(i).getNiceDate());
                     itemBean.setChapter(beans.get(i).getChapterName());
                     itemBean.setAuthor(beans.get(i).getAuthor());
+                    itemBean.setUrl(beans.get(i).getLink());
                     list.add(itemBean);
                 }
             }

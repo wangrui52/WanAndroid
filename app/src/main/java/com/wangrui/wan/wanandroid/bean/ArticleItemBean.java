@@ -6,6 +6,7 @@ public class ArticleItemBean {
     private String date;
     private String chapter;
     private String author;
+    private String url;
 
     public String getTitle() {
         return title;
@@ -37,5 +38,13 @@ public class ArticleItemBean {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

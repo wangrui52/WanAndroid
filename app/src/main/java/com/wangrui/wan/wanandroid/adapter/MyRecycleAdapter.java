@@ -26,7 +26,7 @@ public class MyRecycleAdapter extends RecyclerView.Adapter<MyRecycleAdapter.View
 
     private View mHeaderView;
 
-    private OnItemClickListener mListener;
+    public OnItemClickListener mListener;
 
     public void setOnItemClickListener(OnItemClickListener li) {
         mListener = li;
@@ -37,8 +37,8 @@ public class MyRecycleAdapter extends RecyclerView.Adapter<MyRecycleAdapter.View
         notifyItemInserted(0);
     }
 
-    interface OnItemClickListener {
-        void onItemClick(int position, String data);
+    public interface OnItemClickListener {
+        void onItemClick(int position, String data,String title);
     }
 
     public void addDatas(ArrayList<ArticleItemBean> datas) {
@@ -67,10 +67,17 @@ public class MyRecycleAdapter extends RecyclerView.Adapter<MyRecycleAdapter.View
         String chapter = list.get(pos).getChapter();
         String author = list.get(pos).getAuthor();
         String date = list.get(pos).getData();
+        final String link = list.get(pos).getUrl();
         viewHolder.title.setText(title);
         viewHolder.chapter.setText(chapter);
         viewHolder.author.setText(author);
         viewHolder.date.setText(date);
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.onItemClick(pos,link,title);
+            }
+        });
     }
 
     public int getRealPosition(RecyclerView.ViewHolder holder) {
