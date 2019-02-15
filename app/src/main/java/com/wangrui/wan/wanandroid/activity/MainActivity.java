@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.Window;
+import android.widget.TextView;
 
 import com.wangrui.wan.wanandroid.bean.BannerDate;
 import com.wangrui.wan.wanandroid.R;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private GongzhongFragment gongzhongFragment;
     private KnowleageFragment knowleageFragment;
     private NavigationFragment navigationFragment;
+    private TextView title;
     private int lastShowFragment = 0;
     private Fragment[] fragments;
 
@@ -51,28 +53,28 @@ public class MainActivity extends AppCompatActivity {
                         switchFrament(lastShowFragment, 0);
                         lastShowFragment = 0;
                     }
-
+                    title.setText("首页");
                     return true;
                 case R.id.know:
                     if (lastShowFragment != 1) {
                         switchFrament(lastShowFragment, 1);
                         lastShowFragment = 1;
                     }
-
+                    title.setText("知识体系");
                     return true;
                 case R.id.gongzhonghao:
                     if (lastShowFragment != 2) {
                         switchFrament(lastShowFragment, 2);
                         lastShowFragment = 2;
                     }
-
+                    title.setText("公众号");
                     return true;
                 case R.id.navigation:
                     if (lastShowFragment != 3) {
                         switchFrament(lastShowFragment, 3);
                         lastShowFragment = 3;
                     }
-
+                    title.setText("导航");
                     return true;
 
             }
@@ -109,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
         navigationView = (NavigationView) findViewById(R.id.menu_view);
         bottomNavigationView = findViewById(R.id.Bottom_bar);
         bottomNavigationView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener);
+        title = findViewById(R.id.toolbar_title);
     }
 
 }
