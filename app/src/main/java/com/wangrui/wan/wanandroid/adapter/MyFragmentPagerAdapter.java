@@ -15,17 +15,19 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
     private ArrayList<String> titles;
     private Context mContext;
     private ArrayList<Integer> ids;
+    private int tag;
 
 
-    public MyFragmentPagerAdapter(FragmentManager fm, ArrayList<String> titles, ArrayList<Integer> ids) {
+    public MyFragmentPagerAdapter(FragmentManager fm, ArrayList<String> titles, ArrayList<Integer> ids,int tag) {
         super(fm);
         this.titles = titles;
         this.ids = ids;
+        this.tag = tag;
     }
 
     @Override
     public Fragment getItem(int i) {
-        return ViewPagerFragment.newInstance(ids.get(i));
+        return ViewPagerFragment.newInstance(ids.get(i),tag);
     }
 
     @Override

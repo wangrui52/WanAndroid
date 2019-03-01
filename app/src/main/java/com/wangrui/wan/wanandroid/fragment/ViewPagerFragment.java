@@ -31,12 +31,14 @@ public class ViewPagerFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private int id;
+    private int tag;
     private ArrayList<ArticleItemBean> list;
     private ArticleClassifyAdapter myRecycleAdapter;
 
-    public static ViewPagerFragment newInstance(int id) {
+    public static ViewPagerFragment newInstance(int id,int tag) {
         Bundle args = new Bundle();
         args.putInt("id",id);
+        args.putInt("tag",tag);
         ViewPagerFragment fragment = new ViewPagerFragment();
         fragment.setArguments(args);
         return fragment;
@@ -47,6 +49,7 @@ public class ViewPagerFragment extends Fragment {
         super.onCreate(savedInstanceState);
         assert getArguments() != null;
         id = getArguments().getInt("id");
+        tag = getArguments().getInt("tag");
     }
 
     @Nullable
@@ -63,7 +66,11 @@ public class ViewPagerFragment extends Fragment {
         recyclerView = view.findViewById(R.id.viewPager_recycleView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),
                 LinearLayoutManager.VERTICAL, false));
-        getData();
+        if (tag == 0) {
+            getData();
+        } else if (tag == 1) {
+            getData(1);
+        }
     }
     private void initAdapter() {
         myRecycleAdapter = new ArticleClassifyAdapter(list);
@@ -75,6 +82,32 @@ public class ViewPagerFragment extends Fragment {
                 intent.putExtra("link",data);
                 intent.putExtra("title",title);
                 startActivity(intent);
+            }
+        });
+    }
+
+    private void getData(int tag) {
+        GetRequest request = RetrofitUtils.getInstance().create(GetRequest.class);
+        Call<KnowLeageArticleBean> call = request.getGZArticle(id,0);
+        call.enqueue(new Callback<KnowLeageArticleBean>() {
+            @Override
+            public void onResponse(Call<KnowLeageArticleBean> call, Response<KnowLeageArticleBean> response) {
+                List<KnowLeageArticleBean.DataBean.DatasBean> datasBeanList = response.body().getData().getDatas();
+                for (int i = 0; i<datasBeanList.size();i++) {
+                    ArticleItemBean itemBean = new ArticleItemBean();
+                    itemBean.setUrl(datasBeanList.get(i).getLink());
+                    itemBean.setAuthor(datasBeanList.get(i).getAuthor());
+                    itemBean.setTitle(datasBeanList.get(i).getTitle());
+                    itemBean.setData(datasBeanList.get(i).getNiceDate());
+                    itemBean.setChapter(datasBeanList.get(i).getChapterName());
+                    list.add(itemBean);
+                }
+                initAdapter();
+            }
+
+            @Override
+            public void onFailure(Call<KnowLeageArticleBean> call, Throwable throwable) {
+
             }
         });
     }

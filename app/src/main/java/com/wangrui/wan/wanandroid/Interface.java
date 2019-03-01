@@ -22,5 +22,11 @@ public class Interface {
     //知识体系分类文章
     public static final String KNOWLEAGE_LIST_ARITICLE = "/article/list/0/json";
 
+    //公众号文章
+    public static final String GONGZGONGHAO_ARITICLE = "/wxarticle/chapters/json";
+
+    //公众号文章详情
+    public static final String GONGZHONG_DETIlE = "/wxarticle/list/{chapterId}/{pageId}/json";
+
 
 }
