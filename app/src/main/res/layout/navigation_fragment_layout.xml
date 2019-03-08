@@ -1,14 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <TextView
-        android:id="@+id/te"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="4"
-        android:textSize="300dp"/>
-
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <q.rorbin.verticaltablayout.VerticalTabLayout
+            android:id="@+id/vertical_tab"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/deep_grey"
+            app:tab_height="50dp"
+            app:indicator_color="@color/white"
+            app:indicator_gravity="fill"
+            app:tab_margin="15dp"
+            app:tab_mode="scrollable">
+        </q.rorbin.verticaltablayout.VerticalTabLayout>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/comment_line">
+        </View>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/navigation_recycle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3">
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

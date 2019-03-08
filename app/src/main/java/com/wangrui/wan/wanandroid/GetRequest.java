@@ -5,6 +5,7 @@ import com.wangrui.wan.wanandroid.bean.BannerDate;
 import com.wangrui.wan.wanandroid.bean.ArticleBean;
 import com.wangrui.wan.wanandroid.bean.KnowLeageArticleBean;
 import com.wangrui.wan.wanandroid.bean.KnowleageBean;
+import com.wangrui.wan.wanandroid.bean.NavigationBean;
 import com.wangrui.wan.wanandroid.bean.WXArticleAuthorBean;
 
 import retrofit2.Call;
@@ -35,6 +36,9 @@ public interface GetRequest {
     //公众号文章详情
     @GET(Interface.GONGZHONG_DETIlE)
     Call<KnowLeageArticleBean> getGZArticle(@Path("chapterId") int chapterId,@Path("pageId") int pageId);
+    //导航页
+    @GET(Interface.NAVIGATION_LINK)
+    Call<NavigationBean> getNavigationDate();
 
 
 }

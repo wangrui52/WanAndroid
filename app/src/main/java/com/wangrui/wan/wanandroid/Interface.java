@@ -28,5 +28,8 @@ public class Interface {
     //公众号文章详情
     public static final String GONGZHONG_DETIlE = "/wxarticle/list/{chapterId}/{pageId}/json";
 
+    //导航页
+    public static final String NAVIGATION_LINK = "/navi/json";
+
 
 }
