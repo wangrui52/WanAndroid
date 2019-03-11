@@ -24,6 +24,7 @@ import java.util.List;
 import q.rorbin.verticaltablayout.VerticalTabLayout;
 import q.rorbin.verticaltablayout.adapter.TabAdapter;
 import q.rorbin.verticaltablayout.widget.ITabView;
+import q.rorbin.verticaltablayout.widget.TabView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -34,6 +35,10 @@ public class NavigationFragment extends Fragment {
     private VerticalTabLayout verticalTabLayout;
     private RecyclerView recyclerView;
     private NavigationRecycleAdapter mNavigationAdapter;
+    private boolean needScroll;
+    private LinearLayoutManager mManager;
+    private int index;
+    private boolean isClickTab;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -71,14 +76,12 @@ public class NavigationFragment extends Fragment {
     private void initView(View view, final ArrayList tabList,List<NavigationBean.DataBean> data) {
         verticalTabLayout = view.findViewById(R.id.vertical_tab);
         recyclerView = view.findViewById(R.id.navigation_recycle);
-        List<NavigationBean.DataBean> navigationDataList = new ArrayList<>();
         mNavigationAdapter = new NavigationRecycleAdapter(R.layout.navigation_recycle_item, data);
-        LinearLayoutManager mManager = new LinearLayoutManager(getActivity());
+        mManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(mManager);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(mNavigationAdapter);
         mNavigationAdapter.replaceData(data);
-
 
         verticalTabLayout.setTabAdapter(new TabAdapter() {
             @Override
@@ -110,5 +113,98 @@ public class NavigationFragment extends Fragment {
                 return 0;
             }
         });
+        recycleViewLink();
     }
+
+    private void recycleViewLink() {
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+                if (needScroll && newState == RecyclerView.SCROLL_STATE_IDLE) {
+                    scrollRecyclerView();
+                }
+                rightLinkageLeft(newState);
+            }
+
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                if (needScroll) {
+                    scrollRecyclerView();
+                }
+            }
+        });
+
+        verticalTabLayout.addOnTabSelectedListener(new VerticalTabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabView tab, int position) {
+                isClickTab = true;
+                selectTag(position);
+
+            }
+
+            @Override
+            public void onTabReselected(TabView tab, int position) {
+
+            }
+        });
+    }
+
+    private void scrollRecyclerView() {
+        needScroll = false;
+        int indexDistance = index - mManager.findFirstVisibleItemPosition();
+        if (indexDistance >= 0 && indexDistance < recyclerView.getChildCount()) {
+            int top = recyclerView.getChildAt(indexDistance).getTop();
+            recyclerView.smoothScrollBy(0, top);
+        }
+    }
+
+    private void rightLinkageLeft(int newState) {
+        if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+            if (isClickTab) {
+                isClickTab = false;
+                return;
+            }
+            int firstPosition = mManager.findFirstVisibleItemPosition();
+            if (index != firstPosition) {
+                index = firstPosition;
+                setChecked(index);
+            }
+        }
+    }
+
+    private void setChecked(int position) {
+        if (isClickTab) {
+            isClickTab = false;
+        } else {
+            if (verticalTabLayout == null) {
+                return;
+            }
+            verticalTabLayout.setTabSelected(index);
+        }
+        index = position;
+    }
+
+    private void selectTag(int i) {
+        index = i;
+        recyclerView.stopScroll();
+        smoothScrollToPosition(i);
+    }
+
+    private void smoothScrollToPosition(int currentPosition) {
+        int firstPosition = mManager.findFirstVisibleItemPosition();
+        int lastPosition = mManager.findLastVisibleItemPosition();
+        if (currentPosition <= firstPosition) {
+            recyclerView.smoothScrollToPosition(currentPosition);
+        } else if (currentPosition <= lastPosition) {
+            int top = recyclerView.getChildAt(currentPosition - firstPosition).getTop();
+            recyclerView.smoothScrollBy(0, top);
+        } else {
+            recyclerView.smoothScrollToPosition(currentPosition);
+            needScroll = true;
+        }
+    }
+
+
 }
