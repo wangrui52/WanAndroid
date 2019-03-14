@@ -31,5 +31,8 @@ public class Interface {
     //导航页
     public static final String NAVIGATION_LINK = "/navi/json";
 
+    //登陆
+    public static final String LOGIN_INTERFACE = "/user/login";
+
 
 }

@@ -1,5 +1,6 @@
 package com.wangrui.wan.wanandroid.activity;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
@@ -9,6 +10,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
 
@@ -112,6 +114,16 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.Bottom_bar);
         bottomNavigationView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener);
         title = findViewById(R.id.toolbar_title);
+
+        View headerView = navigationView.getHeaderView(0);
+        headerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 }

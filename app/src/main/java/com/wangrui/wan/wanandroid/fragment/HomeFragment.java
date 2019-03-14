@@ -15,6 +15,11 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.footer.BallPulseFooter;
+import com.scwang.smartrefresh.layout.header.BezierRadarHeader;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.wangrui.wan.wanandroid.activity.ArticleDetailsActivity;
 import com.wangrui.wan.wanandroid.bean.ArticleItemBean;
 import com.wangrui.wan.wanandroid.bean.BannerDate;
@@ -26,6 +31,7 @@ import com.wangrui.wan.wanandroid.utils.RetrofitUtils;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
+import com.youth.banner.listener.OnBannerListener;
 import com.youth.banner.loader.ImageLoader;
 
 import java.util.ArrayList;
@@ -59,7 +65,6 @@ public class HomeFragment extends Fragment {
         myRecycleAdapter = new MyRecycleAdapter(list);
         setHeader(mRecycleView);
         mRecycleView.setAdapter(myRecycleAdapter);
-        initBanner();
         myRecycleAdapter.setOnItemClickListener(new MyRecycleAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position, String data,String title) {
@@ -67,6 +72,15 @@ public class HomeFragment extends Fragment {
                 intent.putExtra("link",data);
                 intent.putExtra("title",title);
                 startActivity(intent);
+            }
+        });
+        RefreshLayout refreshLayout = view.findViewById(R.id.home_refreshlayout);
+        refreshLayout.setRefreshHeader(new BezierRadarHeader(getActivity()).setEnableHorizontalDrag(true));
+        refreshLayout.setRefreshFooter(new BallPulseFooter(getActivity()));
+        refreshLayout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(RefreshLayout refreshLayout) {
+                getListDate();
             }
         });
     }
@@ -85,7 +99,7 @@ public class HomeFragment extends Fragment {
 
 
 
-    private void initBanner() {
+    private void initBanner(List<String> images,List<String> titles,List<String> links) {
         //设置banner样式
         banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE);
         //设置banner动画效果
@@ -97,6 +111,19 @@ public class HomeFragment extends Fragment {
         //设置指示器位置（当banner模式中有指示器时）
         banner.setIndicatorGravity(BannerConfig.CENTER);
         //myRecycleAdapter.setHeaderView(banner);
+        banner.setImageLoader(new GildeImageLoader());
+        banner.setImages(images);
+        banner.setBannerTitles(titles);
+        //banner设置方法全部调用完毕时最后调用
+        banner.start();
+        banner.setOnBannerListener(position -> {
+            String link = links.get(position);
+            String title = titles.get(position);
+            Intent intent = new Intent(getActivity(),ArticleDetailsActivity.class);
+            intent.putExtra("link",link);
+            intent.putExtra("title",title);
+            startActivity(intent);
+        });
     }
 
     private void getBannerDate() {
@@ -108,15 +135,13 @@ public class HomeFragment extends Fragment {
                 data =  response.body().getData();
                 List<String> images = new ArrayList<>();
                 List<String> titles = new ArrayList<>();
+                List<String> links = new ArrayList<>();
                 for (int i = 0;i < data.size(); i++) {
                     images.add(data.get(i).getImagePath());
                     titles.add(data.get(i).getTitle());
+                    links.add(data.get(i).getUrl());
                 }
-                banner.setImageLoader(new GildeImageLoader());
-                banner.setImages(images);
-                banner.setBannerTitles(titles);
-                //banner设置方法全部调用完毕时最后调用
-                banner.start();
+                initBanner(images,titles,links);
             }
 
             @Override

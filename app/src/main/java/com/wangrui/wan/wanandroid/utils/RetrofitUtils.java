@@ -1,6 +1,15 @@
 package com.wangrui.wan.wanandroid.utils;
 
+import android.content.Context;
+
+import com.franmontiel.persistentcookiejar.ClearableCookieJar;
+import com.franmontiel.persistentcookiejar.PersistentCookieJar;
+import com.franmontiel.persistentcookiejar.cache.SetCookieCache;
+import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import com.wangrui.wan.wanandroid.MyApplication;
+import com.wangrui.wan.wanandroid.interceptor.AddCookiesInterceptor;
+import com.wangrui.wan.wanandroid.interceptor.ReceivedCookiesInterceptor;
 
 import java.util.concurrent.TimeUnit;
 
@@ -39,7 +48,11 @@ public class RetrofitUtils {
         builder.connectTimeout(TIMEOUT, TimeUnit.SECONDS);
         builder.readTimeout(TIMEOUT, TimeUnit.SECONDS);
         builder.writeTimeout(TIMEOUT, TimeUnit.SECONDS);
+//        ClearableCookieJar cookieJar =
+//                new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(MyApplication.getInstance()));
         OkHttpClient client = builder.build();
+//        client.interceptors().add(new ReceivedCookiesInterceptor(MyApplication.getInstance()));
+//        client.interceptors().add(new AddCookiesInterceptor(MyApplication.getInstance()));
         mRetrofit = new Retrofit.Builder()
                 // 设置请求的域名
                 .baseUrl(BASE_URL)

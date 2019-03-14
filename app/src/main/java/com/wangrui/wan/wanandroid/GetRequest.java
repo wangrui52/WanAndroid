@@ -8,9 +8,11 @@ import com.wangrui.wan.wanandroid.bean.KnowleageBean;
 import com.wangrui.wan.wanandroid.bean.NavigationBean;
 import com.wangrui.wan.wanandroid.bean.WXArticleAuthorBean;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -39,6 +41,10 @@ public interface GetRequest {
     //导航页
     @GET(Interface.NAVIGATION_LINK)
     Call<NavigationBean> getNavigationDate();
+    //登陆页
+    @POST(Interface.LOGIN_INTERFACE)
+    Call<ResponseBody> goLogin(@Field("username") String username,@Field("password") String password);
+
 
 
 }

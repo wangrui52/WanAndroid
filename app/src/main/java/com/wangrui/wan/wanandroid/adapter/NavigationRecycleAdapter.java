@@ -1,6 +1,7 @@
 package com.wangrui.wan.wanandroid.adapter;
 
 import android.app.ActivityOptions;
+import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.wangrui.wan.wanandroid.R;
+import com.wangrui.wan.wanandroid.activity.ArticleDetailsActivity;
 import com.wangrui.wan.wanandroid.bean.NavigationBean;
 import com.wangrui.wan.wanandroid.utils.CommonUtils;
 import com.zhy.view.flowlayout.FlowLayout;
@@ -53,9 +55,21 @@ public class NavigationRecycleAdapter extends BaseQuickAdapter<NavigationBean.Da
                         CommonUtils.dp2px(10), CommonUtils.dp2px(10));
                 tv.setText(name);
                 tv.setTextColor(CommonUtils.randomColor());
-                mTagFlowLayout.setOnTagClickListener((view, position1, parent1) -> {
-                    //startNavigationPager(view, position1, parent, mArticles);
-                    return true;
+//                mTagFlowLayout.setOnTagClickListener((view, position1, parent1) -> {
+//                    //startNavigationPager(view, position1, parent, mArticles);
+//                    return true;
+//                });
+                mTagFlowLayout.setOnTagClickListener(new TagFlowLayout.OnTagClickListener() {
+                    @Override
+                    public boolean onTagClick(View view, int position, FlowLayout parent) {
+                        Intent intent = new Intent(parent.getContext(),ArticleDetailsActivity.class);
+                        String link = articlesBeanList.get(position).getLink();
+                        String title = articlesBeanList.get(position).getTitle();
+                        intent.putExtra("link",link);
+                        intent.putExtra("title",title);
+                        parent.getContext().startActivity(intent);
+                        return false;
+                    }
                 });
                 return tv;
             }
