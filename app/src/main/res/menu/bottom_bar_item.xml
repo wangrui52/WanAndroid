@@ -7,25 +7,26 @@
         android:checkable="true"
         android:enabled="true"
         android:checked="true"
-        android:icon="@mipmap/ic_launcher"
+        android:iconTint="@color/deep_grey"
+        android:icon="@drawable/home_select_icon"
         app:showAsAction="ifRoom">
     </item>
     <item android:id="@+id/know"
         android:title="知识体系"
         android:enabled="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/knowleage_select_icon"
         app:showAsAction="ifRoom">
     </item>
     <item android:id="@+id/gongzhonghao"
         android:title="公众号"
         android:enabled="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/gongzhong_select_icon"
         app:showAsAction="ifRoom">
     </item>
     <item android:id="@+id/navigation"
         android:title="导航"
         android:enabled="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/navigation_selcet_icon"
         app:showAsAction="ifRoom">
     </item>
 </menu>

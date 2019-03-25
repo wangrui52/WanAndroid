@@ -11,31 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1">
-
-        <android.support.design.widget.AppBarLayout
-            android:id="@+id/app_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_scrollFlags="scroll|enterAlways"
-                android:background="@color/deepskyblue">
-
-                <TextView
-                    android:id="@+id/toolbar_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="首页"
-                    android:layout_gravity="center"
-                    android:textColor="@color/white"/>
-
-            </android.support.v7.widget.Toolbar>
-
-        </android.support.design.widget.AppBarLayout>
+        <include android:id="@+id/top_bar"
+            layout="@layout/top_bar_layout">
+        </include>
 
         <FrameLayout
             android:id="@+id/framePage"
@@ -53,7 +31,7 @@
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
         android:background="@color/white"
-        app:itemTextColor="@color/colorAccent"
+        app:itemTextColor="@color/text_colors"
         app:menu="@menu/bottom_bar_item">
     </android.support.design.widget.BottomNavigationView>
 </LinearLayout>

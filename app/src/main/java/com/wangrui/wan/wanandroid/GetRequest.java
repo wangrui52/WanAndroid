@@ -24,7 +24,7 @@ public interface GetRequest {
 
     //首页文章列表
     @GET(Interface.HOME_ARTICLE)
-    Call<ArticleBean> getArticleDate();
+    Call<ArticleBean> getArticleDate(@Path("pageId") int pageId);
 
     @GET(Interface.KNOWLEAGE_LIST)
     Call<KnowleageBean> getArticleList();

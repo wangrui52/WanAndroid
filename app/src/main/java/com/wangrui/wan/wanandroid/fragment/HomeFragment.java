@@ -19,6 +19,7 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.footer.BallPulseFooter;
 import com.scwang.smartrefresh.layout.header.BezierRadarHeader;
+import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.wangrui.wan.wanandroid.activity.ArticleDetailsActivity;
 import com.wangrui.wan.wanandroid.bean.ArticleItemBean;
@@ -48,6 +49,7 @@ public class HomeFragment extends Fragment {
     private MyRecycleAdapter myRecycleAdapter;
     private ArrayList<ArticleItemBean> list;
     private List<BannerDate.DataBean> data;
+    private int count = 1;
 
     @Nullable
     @Override
@@ -80,14 +82,26 @@ public class HomeFragment extends Fragment {
         refreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(RefreshLayout refreshLayout) {
-                getListDate();
+                getListDate(0);
+                getBannerDate();
+                refreshLayout.finishRefresh(1000);
+            }
+        });
+
+        refreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
+            @Override
+            public void onLoadMore(RefreshLayout refreshLayout) {
+                getListDate(count++);
+                refreshLayout.finishLoadMore(1000);
+                myRecycleAdapter.notifyDataSetChanged();
+
             }
         });
     }
 
     private ArrayList<ArticleItemBean> initList () {
         list = new ArrayList<>();
-        getListDate();
+        getListDate(0);
         return list;
     }
 
@@ -96,8 +110,6 @@ public class HomeFragment extends Fragment {
         banner = view1.findViewById(R.id.banner);
         myRecycleAdapter.setHeaderView(view1);
     }
-
-
 
     private void initBanner(List<String> images,List<String> titles,List<String> links) {
         //设置banner样式
@@ -152,9 +164,9 @@ public class HomeFragment extends Fragment {
         });
     }
 
-    private void getListDate() {
+    private void getListDate(int pageId) {
         GetRequest request = RetrofitUtils.getInstance().create(GetRequest.class);
-        Call<ArticleBean> call = request.getArticleDate();
+        Call<ArticleBean> call = request.getArticleDate(pageId);
         call.enqueue(new Callback<ArticleBean>() {
             @Override
             public void onResponse(Call<ArticleBean> call, Response<ArticleBean> response) {

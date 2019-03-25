@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.wangrui.wan.wanandroid.GetRequest;
 import com.wangrui.wan.wanandroid.R;
 import com.wangrui.wan.wanandroid.activity.ArticleDetailsActivity;
@@ -32,8 +34,9 @@ public class ViewPagerFragment extends Fragment {
     private RecyclerView recyclerView;
     private int id;
     private int tag;
-    private ArrayList<ArticleItemBean> list;
     private ArticleClassifyAdapter myRecycleAdapter;
+    private RefreshLayout refreshLayout;
+    private int count = 1;
 
     public static ViewPagerFragment newInstance(int id,int tag) {
         Bundle args = new Bundle();
@@ -62,19 +65,32 @@ public class ViewPagerFragment extends Fragment {
     }
 
     private void initView(View view){
-        list = new ArrayList<>();
         recyclerView = view.findViewById(R.id.viewPager_recycleView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),
                 LinearLayoutManager.VERTICAL, false));
         if (tag == 0) {
             getData();
         } else if (tag == 1) {
-            getData(1);
+            getData(0);
         }
+        refreshLayout = view.findViewById(R.id.viewPager_freshlayout);
+        refreshLayout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(RefreshLayout refreshLayout) {
+                getData(0);
+                refreshLayout.finishRefresh(1000);
+            }
+        });
+
     }
-    private void initAdapter() {
-        myRecycleAdapter = new ArticleClassifyAdapter(list);
-        recyclerView.setAdapter(myRecycleAdapter);
+    private void initAdapter(ArrayList<ArticleItemBean> list) {
+        if (myRecycleAdapter == null) {
+            myRecycleAdapter = new ArticleClassifyAdapter(list);
+            recyclerView.setAdapter(myRecycleAdapter);
+        } else {
+            myRecycleAdapter.notifyDataSetChanged();
+        }
+
         myRecycleAdapter.setOnItemClickListener(new ArticleClassifyAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position, String data, String title) {
@@ -88,7 +104,8 @@ public class ViewPagerFragment extends Fragment {
 
     private void getData(int tag) {
         GetRequest request = RetrofitUtils.getInstance().create(GetRequest.class);
-        Call<KnowLeageArticleBean> call = request.getGZArticle(id,0);
+        Call<KnowLeageArticleBean> call = request.getGZArticle(id,tag);
+        ArrayList<ArticleItemBean> list = new ArrayList<>();
         call.enqueue(new Callback<KnowLeageArticleBean>() {
             @Override
             public void onResponse(Call<KnowLeageArticleBean> call, Response<KnowLeageArticleBean> response) {
@@ -102,7 +119,7 @@ public class ViewPagerFragment extends Fragment {
                     itemBean.setChapter(datasBeanList.get(i).getChapterName());
                     list.add(itemBean);
                 }
-                initAdapter();
+                initAdapter(list);
             }
 
             @Override
@@ -115,6 +132,7 @@ public class ViewPagerFragment extends Fragment {
     private void getData() {
         GetRequest request = RetrofitUtils.getInstance().create(GetRequest.class);
         Call<KnowLeageArticleBean> call = request.getKnowLeageArticle(id);
+        ArrayList<ArticleItemBean> list = new ArrayList<>();
         call.enqueue(new Callback<KnowLeageArticleBean>() {
             @Override
             public void onResponse(Call<KnowLeageArticleBean> call, Response<KnowLeageArticleBean> response) {
@@ -128,7 +146,7 @@ public class ViewPagerFragment extends Fragment {
                     itemBean.setChapter(datasBeanList.get(i).getChapterName());
                     list.add(itemBean);
                 }
-                initAdapter();
+                initAdapter(list);
             }
 
             @Override

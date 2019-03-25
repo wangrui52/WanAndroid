@@ -12,6 +12,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.scwang.smartrefresh.header.TaurusHeader;
+import com.scwang.smartrefresh.layout.api.RefreshFooter;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.wangrui.wan.wanandroid.GetRequest;
 import com.wangrui.wan.wanandroid.R;
 import com.wangrui.wan.wanandroid.activity.AriticleClassifyActivity;
@@ -33,27 +38,36 @@ public class KnowleageFragment extends Fragment {
     private KnowleageRecycleAdapter adapter;
     private ArrayList<String> childrenName = new ArrayList<>();
     private ArrayList<Integer> childrenId = new ArrayList<>();
-    private ArrayList<KnowleageEntry> knowleageEntries = new ArrayList<>();
+    //private ArrayList<KnowleageEntry> knowleageEntries = new ArrayList<>();
+    private RefreshLayout refreshLayout;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.knowleage_fragment_layout,container,false);
-        initList();
+        getData();
         initView(view);
-
         return view;
     }
 
     private void initView(View view) {
         recyclerView = view.findViewById(R.id.knowleage_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
+        refreshLayout = view.findViewById(R.id.knowleage_refresh);
+        refreshLayout.setRefreshHeader(new TaurusHeader(getActivity()));
+        refreshLayout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(RefreshLayout refreshLayout) {
+                getData();
+                refreshLayout.finishRefresh(1000);
+            }
+        });
+        refreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
+            @Override
+            public void onLoadMore(RefreshLayout refreshLayout) {
+                refreshLayout.finishLoadMore(1000);
+            }
+        });
     }
-
-    private ArrayList<KnowleageEntry> initList(){
-        getData();
-        return knowleageEntries;
-    }
-
 
     private void getData() {
         GetRequest request = RetrofitUtils.getInstance().create(GetRequest.class);
@@ -63,6 +77,7 @@ public class KnowleageFragment extends Fragment {
             public void onResponse(Call<KnowleageBean> call, Response<KnowleageBean> response) {
                 List<KnowleageBean.DataBean> dataBeans = response.body().getData();
                 List<KnowleageBean.DataBean.ChildrenBean> childrenBeans;
+                ArrayList<KnowleageEntry> knowleageEntries = new ArrayList<>();
                 for (int i= 0;i<dataBeans.size();i++) {
                     KnowleageEntry entry = new KnowleageEntry();
                     entry.setName(dataBeans.get(i).getName());
@@ -78,9 +93,15 @@ public class KnowleageFragment extends Fragment {
                     knowleageEntries.add(entry);
                 }
 
-                adapter = new KnowleageRecycleAdapter(knowleageEntries);
-                recyclerView.setAdapter(adapter);
-                initAdapter(adapter);
+                if (adapter == null) {
+                    adapter = new KnowleageRecycleAdapter(knowleageEntries);
+                    recyclerView.setAdapter(adapter);
+                    initAdapter(adapter);
+                } else {
+                    adapter.notifyDataSetChanged();
+                }
+
+
 
             }
 

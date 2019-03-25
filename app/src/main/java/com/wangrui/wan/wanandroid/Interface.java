@@ -8,13 +8,13 @@ package com.wangrui.wan.wanandroid;
 public class Interface {
 
     //baseUrl
-    public static final String BASE_URL = "http://www.wanandroid.com";
+    public static final String BASE_URL = "https://www.wanandroid.com";
 
     //首页banner轮播图
     public static final String HOME_BANNER = "/banner/json";
 
     //首页文章
-    public static final String HOME_ARTICLE = "/article/list/0/json";
+    public static final String HOME_ARTICLE = "/article/list/{pageId}/json";
 
     //知识体系分类列表
     public static final String KNOWLEAGE_LIST = "/tree/json";

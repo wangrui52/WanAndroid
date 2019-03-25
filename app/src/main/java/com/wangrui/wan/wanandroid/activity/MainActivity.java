@@ -112,9 +112,9 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         navigationView = (NavigationView) findViewById(R.id.menu_view);
         bottomNavigationView = findViewById(R.id.Bottom_bar);
+        bottomNavigationView.setItemIconTintList(null);
         bottomNavigationView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener);
         title = findViewById(R.id.toolbar_title);
-
         View headerView = navigationView.getHeaderView(0);
         headerView.setOnClickListener(new View.OnClickListener() {
             @Override
