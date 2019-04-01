@@ -30,4 +30,7 @@
     <color name="shallow_green">#FF36BC9B</color>
     <color name="shallow_grey">#FF757575</color>
     <color name="text_colors">#FF573E</color>
+    <color name="start_color">#FF314F</color>
+    <color name="end_color">#FE802C</color>
+    <color name="gray_background">#F6F6F6</color>
 </resources>

@@ -43,10 +43,20 @@ public class GongzhongFragment extends Fragment {
         viewPager = view.findViewById(R.id.framePage);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         viewPager.setOffscreenPageLimit(0);
-        MyFragmentPagerAdapter adapter = new MyFragmentPagerAdapter(getChildFragmentManager()
+        MyFragmentPagerAdapter adapter = new MyFragmentPagerAdapter(getActivity(),getChildFragmentManager()
                 ,names,ids,1);
         tabLayout.setupWithViewPager(viewPager);
         viewPager.setAdapter(adapter);
+        for (int i = 0; i< tabLayout.getTabCount();i++) {
+            TabLayout.Tab tab = tabLayout.getTabAt(i);
+            if (tab != null) {
+                tab.setCustomView(adapter.getTabView(i));
+//                if (tab.getCustomView() != null) {
+//
+//                }
+            }
+        }
+
     }
 
     private void getTabDate(final View view) {

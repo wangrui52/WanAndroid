@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
@@ -124,7 +125,7 @@ public class ViewPagerFragment extends Fragment {
 
             @Override
             public void onFailure(Call<KnowLeageArticleBean> call, Throwable throwable) {
-
+                Toast.makeText(getActivity(),"网络错误",Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -151,7 +152,7 @@ public class ViewPagerFragment extends Fragment {
 
             @Override
             public void onFailure(Call<KnowLeageArticleBean> call, Throwable throwable) {
-
+                Toast.makeText(getActivity(),"网络错误",Toast.LENGTH_SHORT).show();
             }
         });
     }

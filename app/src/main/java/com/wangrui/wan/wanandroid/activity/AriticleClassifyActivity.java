@@ -40,7 +40,7 @@ public class AriticleClassifyActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.tablayout);
         viewPager = findViewById(R.id.framePage);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        MyFragmentPagerAdapter adapter = new MyFragmentPagerAdapter(getSupportFragmentManager()
+        MyFragmentPagerAdapter adapter = new MyFragmentPagerAdapter(this,getSupportFragmentManager()
                 ,titles,ids,0);
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
