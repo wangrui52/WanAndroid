@@ -89,6 +89,7 @@ public class ViewPagerFragment extends Fragment {
             myRecycleAdapter = new ArticleClassifyAdapter(list);
             recyclerView.setAdapter(myRecycleAdapter);
         } else {
+            recyclerView.setAdapter(myRecycleAdapter);
             myRecycleAdapter.notifyDataSetChanged();
         }
 
@@ -105,7 +106,7 @@ public class ViewPagerFragment extends Fragment {
 
     private void getData(int tag) {
         GetRequest request = RetrofitUtils.getInstance().create(GetRequest.class);
-        Call<KnowLeageArticleBean> call = request.getGZArticle(id,tag);
+        Call<KnowLeageArticleBean> call = request.getGZArticle(id,0);
         ArrayList<ArticleItemBean> list = new ArrayList<>();
         call.enqueue(new Callback<KnowLeageArticleBean>() {
             @Override
