@@ -44,11 +44,18 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        return titles.get(position);
+        return "";
     }
 
     public View getTabView(int position){
         View view = LayoutInflater.from(mContext).inflate(R.layout.tab_item, null);
+        TextView tv= (TextView) view.findViewById(R.id.tab_title);
+        tv.setText(titles.get(position));
+        return view;
+    }
+
+    public View getSelectTabVeiw(int position) {
+        View view = LayoutInflater.from(mContext).inflate(R.layout.tab_select_item,null);
         TextView tv= (TextView) view.findViewById(R.id.tab_title);
         tv.setText(titles.get(position));
         return view;

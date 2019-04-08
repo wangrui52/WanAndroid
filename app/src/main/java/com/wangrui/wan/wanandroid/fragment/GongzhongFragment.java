@@ -30,6 +30,7 @@ public class GongzhongFragment extends Fragment {
     private List<WXArticleAuthorBean.DataBean> dataBeans;
     private ArrayList<String> names;
     private ArrayList<Integer> ids;
+    private MyFragmentPagerAdapter adapter;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -41,12 +42,14 @@ public class GongzhongFragment extends Fragment {
     private void initView(View view) {
         tabLayout = view.findViewById(R.id.tablayout);
         viewPager = view.findViewById(R.id.framePage);
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        viewPager.addOnPageChangeListener(new TabLayoutChangeLintener(tabLayout));
         viewPager.setOffscreenPageLimit(0);
-        MyFragmentPagerAdapter adapter = new MyFragmentPagerAdapter(getActivity(),getChildFragmentManager()
+        adapter = new MyFragmentPagerAdapter(getActivity(),getChildFragmentManager()
                 ,names,ids,1);
         tabLayout.setupWithViewPager(viewPager);
         viewPager.setAdapter(adapter);
+//        TabLayout.Tab tabAt = tabLayout.getTabAt(0);
+//        tabAt.setCustomView(adapter.getSelectTabVeiw(0));
         for (int i = 0; i< tabLayout.getTabCount();i++) {
             TabLayout.Tab tab = tabLayout.getTabAt(i);
             if (tab != null) {
@@ -81,5 +84,31 @@ public class GongzhongFragment extends Fragment {
 
             }
         });
+    }
+
+    private class TabLayoutChangeLintener extends TabLayout.TabLayoutOnPageChangeListener{
+
+        public TabLayoutChangeLintener(TabLayout tabLayout) {
+            super(tabLayout);
+        }
+
+        @Override
+        public void onPageScrollStateChanged(int state) {
+            super.onPageScrollStateChanged(state);
+        }
+
+        @Override
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            super.onPageScrolled(position, positionOffset, positionOffsetPixels);
+        }
+
+        @Override
+        public void onPageSelected(int position) {
+            super.onPageSelected(position);
+//            Log.i("wangrui666","选择"+position);
+//            TabLayout.Tab tabAt = tabLayout.getTabAt(position);
+//            tabAt.setCustomView(adapter.getSelectTabVeiw(position));
+            //adapter.notifyDataSetChanged();
+        }
     }
 }
