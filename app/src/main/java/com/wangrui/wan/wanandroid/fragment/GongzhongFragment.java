@@ -35,6 +35,7 @@ public class GongzhongFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.gongzhong_fragmnet_layout,container,false);
+
         getTabDate(view);
         return view;
     }
@@ -48,15 +49,15 @@ public class GongzhongFragment extends Fragment {
                 ,names,ids,1);
         tabLayout.setupWithViewPager(viewPager);
         viewPager.setAdapter(adapter);
+//        getActivity().getSupportActionBar().setElevation(0);
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//            toolbar.setElevation(0);
 //        TabLayout.Tab tabAt = tabLayout.getTabAt(0);
 //        tabAt.setCustomView(adapter.getSelectTabVeiw(0));
         for (int i = 0; i< tabLayout.getTabCount();i++) {
             TabLayout.Tab tab = tabLayout.getTabAt(i);
             if (tab != null) {
                 tab.setCustomView(adapter.getTabView(i));
-//                if (tab.getCustomView() != null) {
-//
-//                }
             }
         }
 
