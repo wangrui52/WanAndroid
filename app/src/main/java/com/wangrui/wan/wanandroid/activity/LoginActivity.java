@@ -8,21 +8,29 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import com.wangrui.wan.wanandroid.GetRequest;
 import com.wangrui.wan.wanandroid.R;
+import com.wangrui.wan.wanandroid.interceptor.ReceivedCookiesInterceptor;
 import com.wangrui.wan.wanandroid.utils.RetrofitUtils;
 
+import java.util.concurrent.TimeUnit;
+
+import okhttp3.OkHttpClient;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
+import static com.wangrui.wan.wanandroid.Interface.BASE_URL;
+import static com.wangrui.wan.wanandroid.utils.RetrofitUtils.TIMEOUT;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText userName;
     private EditText passWord;
-    private Button login;
-    private Button register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +38,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_login);
         userName = findViewById(R.id.userName);
         passWord = findViewById(R.id.passWord);
-        login = findViewById(R.id.login);
+        Button login = findViewById(R.id.login);
         login.setOnClickListener(this);
-        register = findViewById(R.id.register);
+        Button register = findViewById(R.id.register);
         register.setOnClickListener(this);
     }
 
@@ -60,7 +68,21 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             return;
         }
 
-        GetRequest getRequest = RetrofitUtils.getInstance().create(GetRequest.class);
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        // 设置超时
+        builder.connectTimeout(TIMEOUT, TimeUnit.SECONDS);
+        builder.readTimeout(TIMEOUT, TimeUnit.SECONDS);
+        builder.writeTimeout(TIMEOUT, TimeUnit.SECONDS);
+        OkHttpClient client = new OkHttpClient();
+        client.interceptors().add(new ReceivedCookiesInterceptor(this));
+
+        Retrofit mRetrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .build();
+
+        GetRequest getRequest = mRetrofit.create(GetRequest.class);
         Call<ResponseBody> call = getRequest.goLogin(name,password);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
